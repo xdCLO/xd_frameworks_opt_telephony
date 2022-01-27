@@ -2223,7 +2223,7 @@ public class DcTracker extends Handler {
             if (DBG) log("setInitialAttachApn: X There in no available apn");
         } else {
             String numeric = mPhone.getOperatorNumeric();
-            if (numeric != null &&
+            if (initialAttachApnSetting.isEmergencyApn() && numeric != null &&
                     !numeric.equalsIgnoreCase(initialAttachApnSetting.getOperatorNumeric())) {
                 if (DBG) log("setInitialAttachApn: use empty apn");
                 //Add empty apn and send attach request
